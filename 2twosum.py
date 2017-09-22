@@ -31,5 +31,3 @@ class Solution(object):
             l2=l2.next
         return result.next       
 
-
-10%10

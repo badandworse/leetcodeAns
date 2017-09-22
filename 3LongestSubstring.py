@@ -10,11 +10,12 @@ def lengthOfLongestSubstring(s):
         nowcount=0
         while i<len(s):
             temp=s[i]
-            if temp in m:
+            ll=m.find(temp)
+            if ll>=0:
                 if nowcount>maxcount:
                     maxcount=nowcount
-                nowcount=1
-                m=''+temp
+                m=m[ll+1:]+temp
+                nowcount=len(m)
             else:
                 nowcount+=1
                 m=m+temp
