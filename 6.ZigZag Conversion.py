@@ -41,9 +41,3 @@ test=Solution()
 testStr="AB"
 
 test.convert(testStr,1)
-int('123'[::-1])
-'123'[1::]
-9646324351 
-2147483647
-1534236469
-abs(-1)
