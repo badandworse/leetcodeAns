@@ -78,7 +78,7 @@ def KMPSerach(s,t):
 
 
 #%%       
-testS='acaa+aaca'
+testS='abc+cba'
 testT='aaaaax'
 
 
