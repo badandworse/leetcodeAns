@@ -145,3 +145,5 @@ s=[]
 m.Preorder(s)
 print(s)
 
+L=[1,2,3]
+float(3)/2

@@ -222,3 +222,6 @@ class TwoColor(object):
                     return self.isTwoColor
 
         return self.isTwoColor     
+
+
+9646324351>2147483647
