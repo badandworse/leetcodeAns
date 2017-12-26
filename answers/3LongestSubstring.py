@@ -51,3 +51,10 @@ class Solution:
             i+=1
         
         return len(m) if len(m)>len(longStr) else len(longStr)
+
+
+#进一步优化
+'''
+利用hashmap，加已经使用过的str存入
+这样在后续的时候只解查看char是否已经在hashmap中
+'''
