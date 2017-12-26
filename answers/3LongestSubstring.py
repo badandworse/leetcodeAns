@@ -25,3 +25,29 @@ def lengthOfLongestSubstring(s):
         return maxcount
 
 print(lengthOfLongestSubstring("dvdf"))
+
+
+
+#python3版本:
+class Solution:
+    def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        if len(s)==0:
+            return 0
+        m=s[0]
+        i=1
+        longStr=m
+        while i<len(s):
+            place=m.find(s[i])
+            if place>-1:
+                if len(m)>len(longStr):
+                    longStr=m
+                m=m[place+1:]+s[i]
+            else:
+                m+=s[i]
+            i+=1
+        
+        return len(m) if len(m)>len(longStr) else len(longStr)
