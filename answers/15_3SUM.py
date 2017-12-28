@@ -63,7 +63,8 @@ class Solution:
                 i+=1
                 continue
             while k>j:
-                if nums[i]+nums[j]+nums[k]==0:
+                s=nums[i]+nums[j]+nums[k]
+                if s==0:
                     anwsers.append([nums[i],nums[j],nums[k]])
                     while k>j and nums[j]==nums[j+1]:
                         j+=1
@@ -71,7 +72,7 @@ class Solution:
                         k-=1
                     j+=1
                     k-=1
-                elif nums[i]+nums[j]+nums[k]>0:
+                elif s>0:
                     k-=1
                 else:
                     j+=1
