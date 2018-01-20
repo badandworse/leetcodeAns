@@ -14,7 +14,8 @@ class Solution:
             i+=1
         return -1
 
-    if len(nums)==0:
+    def BinarySearch(self,nums,target):
+        if len(nums)==0:
             return -1
         begin=0
         end=len(nums)-1
@@ -32,14 +33,17 @@ class Solution:
             return Nmin
         i=0
         end=Nmin-1 if Nmin>0 else len(nums)-1
-        tIndex=self.findT(nums,i,end,target)
-        if tIndex>-1:
-            return tIndex
+        while i<=end:
+            mid=i+int((end-i)/2)
+            if nums[mid]==target:
+                return mid
+            elif nums[mid]>target:
+                end=mid-1
+            else:
+                i=mid+1
+        
         i=Nmin+1
         end=len(nums)-1 if Nmin>0 else-1
-        return self.findT(nums,i,end,target)
-    
-    def findT(self,nums,i,end,target):
         while i<=end:
             mid=i+int((end-i)/2)
             if nums[mid]==target:
@@ -50,7 +54,30 @@ class Solution:
                 i=mid+1
         
         return -1
+    
+    def betterBinarySearch(self,nums,target):
+        if len(nums)==0:
+            return -1
+        i=0
+        length=len(nums)-1
+        while i<=length:
+            mid=i+int((length-i)/2)
+            if nums[mid]==target:
+                return mid
+            else:
+                if nums[mid]>=nums[i]:
+                    if nums[i]<=target<nums[mid]:
+                        length=mid-1
+                    else:
+                        i=mid+1
+                else:
+                    if nums[mid]<target<=nums[length]:
+                        i=mid+1
+                    else:
+                        length=mid-1
+        return -1
+        
 #%%
 msss=Solution()
 aList=[3,1]
-msss.BinarySearch(aList,1)
+msss.betterBinarySearch(aList,1)
