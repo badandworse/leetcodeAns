@@ -11,9 +11,6 @@ class Solution:
         :type n: int
         :rtype: ListNode
         """
-        if not head.next:
-            if n==1:
-                return head.next
         nodeDict={}
         i=0
         temp=head
@@ -24,14 +21,30 @@ class Solution:
         '''
         有1~i个节点，倒着数第n个，则编号是i-n+1
         '''
+        if i-n not in nodeDict and i-n+2 not in nodeDict:
+            return None
         if i-n+2 in nodeDict:
             nodeDict[i-n].next=nodeDict[i-n+2]
         else:
             nodeDict[i-n].next=None
-        return nodeDict[0]
+        return nodeDict[1]
 
-#%%
-head=ListNode(1)
-head.next=ListNode(2)
-mm=Solution()
-mm.removeNthFromEnd(head,1)
+    def betterRemoveNthFromEnd(self, head, n):
+        """
+        :type head: ListNode
+        :type n: int
+        :rtype: ListNode
+        """
+        first=head
+        second=head
+        for i in range(n):
+            first=first.next
+        if first is None:
+            return head.next
+        else:
+            first=first.next
+        while first:
+            first=first.next
+            second=second.next
+        second.next=second.next.next
+        return head
