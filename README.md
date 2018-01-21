@@ -1,9 +1,14 @@
 ## 记录我在用python刷leetcode中各个题的解题思路
 ## the answers for leetcode problem by python
 
-### 17.Letter Combinations of a Phone Number
+### 17.Letter Combinations of a Phone Number:
 这题是要找到号码对应字符串的所有组合。用字典来表示数字到字符串的组合。然后遍历数字串。使其对应的字母list与前面已有的组合进行
 连接即可。
+
+### 19.Remove Nth Node From End of List:
+本题要求移除倒数第n个点，进阶解法要求只遍历一遍完成。
+我采用字典，将节点编号和节点存进字典里，这样遍历一遍记得到了所有，然后移除即可。
+
 
 ### 31.NextPermutation:
 这个题是要求找到给定数组排列的下一个 [字典序](https://zh.wikipedia.org/zh-hans/%E5%AD%97%E5%85%B8%E5%BA%8F)，如果把给的数组当作一个组合数，则下一个字典序
