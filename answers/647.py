@@ -76,7 +76,3 @@ class Solution2:
                 break
         
         return result
-
-
-mm=Solution2()
-mm.countSubstrings('abc')
