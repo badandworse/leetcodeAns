@@ -1,4 +1,3 @@
-
 class Solution:
     def decodeString(self, s):
         """
@@ -11,7 +10,7 @@ class Solution:
         result=''
         for ll in s:
             if ll.isdigit():
-                if len(nowNList)>0 and len(nowNList)>len(nowLeft):
+                if len(nowNList)>len(nowLeft):
                     nowNList[len(nowNList)-1]=nowNList[len(nowNList)-1]*10+int(ll)
                 else:
                     nowNList.append(int(ll))
@@ -33,7 +32,3 @@ class Solution:
                     nowSList[len(nowSList)-1]+=ll
         
         return result
-
-
-mm=Solution()
-mm.decodeString("100[leetcode]")
