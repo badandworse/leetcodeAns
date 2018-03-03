@@ -30,23 +30,25 @@ def getLCS(list1,list2):
     results=[]
     paths=[]
     addLcs(bList,list1,m-1,list2,n-1,results,paths)
+    
     return results
 
 def addLcs(bList,list1,m,list2,n,results,paths):
     if m<0 or n<0:
-        results.append(paths)
+        
+        results.append(paths[::-1])
         return
     if bList[m][n]=='b':
-        addLcs(bList,list1,m-1,list2,n-1,results,paths)
         paths.append(list1[m])
+        addLcs(bList,list1,m-1,list2,n-1,results,paths)
     elif bList[m][n]=='i':
         addLcs(bList,list1,m-1,list2,n,results,paths)
-    elif bList[m][n]=='t':
+    elif bList[m][n]=='j':
+        addLcs(bList,list1,m,list2,n-1,results,paths)
+    else:
         pathsTwo=[i for i in paths]
         addLcs(bList,list1,m-1,list2,n,results,paths)
         addLcs(bList,list1,m,list2,n-1,results,pathsTwo)
-    else:
-        addLcs(bList,list1,m,list2,n-1,results,paths)
 
 
 
