@@ -1,3 +1,4 @@
+#%%
 class Solution(object):
     def numberOfArithmeticSlices(self, A):
         """
@@ -23,8 +24,8 @@ class Solution(object):
                 p=q
                 q=i
                 nowT=q-p+1
-            if nowT>=3:
-                resultsL.append(nowT)
+        if nowT>=3:
+            resultsL.append(nowT)
         sum=0
         for i in resultsL:
             sum+=(i-1)*(i-2)/2
