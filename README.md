@@ -49,9 +49,16 @@ dfs作用:首先检查当前目标值，小于0则返回，当前路径不满足
 ### 48.Rotate Image:
 旋转90度的2维矩阵，必须原地修改，转置以后水平反转即可。
 
+### 49.Group Anagrams:
+普通做法,用deafultDict,每个字符串排序后是deafultDict的key。然后将原字符串加value的list中。
+
+看了solution以后，第二种解法更好。首先他统计的是字符串中各个字符的数量。如果各个字符数量相同，那肯定组成字符串的字母是一样的。
+
 ### 55. Jump Game:
 刚看到这题，我下意识的用动态规划来做，做出答案后，超时，加入追溯功能，即在当前点如果无法达到就标记一次，下次再到这个点就直接跳过，但是仍然超时。
 
+### 56. Merge Intervals:
+简单粗暴的办法会超时，可以先对list按每个元素的start的排个序，然后再遍历，看是否需要合并。这样时间复杂度是O(Nlog(N))。
 
 没有想法后，看了solution，知道了贪心算法，思路就是,从右往左遍历，看当前点能否到达上一个goodPosition。比如最右是第一个goodPosition，第二个点如果index+nums[index]>=最右的index,显然是能到达的，所以此时lastGoodPosition=这个数的索引，如果不能大于，则lastGoodPosition不变，继续向右遍历，直到遍历完起点，如果此时lastGoodPosition==0,显然应该返回True，否则返回False.
 
