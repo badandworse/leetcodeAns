@@ -110,6 +110,11 @@ easy难度，要求线性复杂时间，直接上dict简单粗暴。
 
 前序遍历二叉树,非递归的方法同样要用到栈，先将根节点加入栈。然后循环出栈，将出栈的右节点压入栈，将左节点压入栈，顺序很重要。循环，直到栈空。
 
+### 145.Binary Tree Postorder Traversal:
+
+这题我只相当了递归版本，看了[discuss](https://leetcode.com/problems/binary-tree-postorder-traversal/discuss/45853/Accepted-Just-a-reversal-of-a-modified-Pre-order-traversal)才发现，如果我做出了
+144的Preorder 即mid-left-right,那我应该可以做出mid-right-left,只要再一反转不就是left-right-mid了。突然觉得自己缺乏想象力。
+
 ### 198.House Robber
 最大抢劫金额，当进行到当前房子，有两种选择，抢劫当前房子，与不抢劫当前房子。因此需要有两个变量，存抢劫当前房子的最大金额，和不抢劫当前房子的最大金额，前者等于不抢劫上一个房子的最大金额加上当前房子的金额，而后者等于不抢劫上一个房子和抢劫上一个房子中两者的较大者。
 
