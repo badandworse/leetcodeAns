@@ -62,6 +62,9 @@ dfs作用:首先检查当前目标值，小于0则返回，当前路径不满足
 
 没有想法后，看了solution，知道了贪心算法，思路就是,从右往左遍历，看当前点能否到达上一个goodPosition。比如最右是第一个goodPosition，第二个点如果index+nums[index]>=最右的index,显然是能到达的，所以此时lastGoodPosition=这个数的索引，如果不能大于，则lastGoodPosition不变，继续向右遍历，直到遍历完起点，如果此时lastGoodPosition==0,显然应该返回True，否则返回False.
 
+### 62.Unique Paths:
+标准的动态规划问题，不过是二维的
+f(m,n)=f(m-1,n)+f(m,n-1)
 
 ### 75.Sort Colors:
 简单粗暴解法就是计数，循环一遍知道0，1，2个数即可。再循环一遍赋值。这个实名复杂度为2*O(n)
