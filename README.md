@@ -112,11 +112,15 @@ f(m,n)=f(m-1,n)+f(m,n-1)
 ### 114.Flatten Binary Tree to Linked List:
 
 按前序遍历的方式扁平化二叉树，先把左子树flatten,然后找到左子树flatten后的最后一个节点，令其右子树等于根的右子树，然后令根的右子树等于根的左子树，最后令根的左子树等于None.
+
 ### 136.Single Number:
 easy难度，要求线性复杂时间，直接上dict简单粗暴。
 
 看了solution，发现了位操作这种有趣的答案。用^可以只用O(1)的空间复杂度:
 0^a=a,a^a=0,a^b^a=(a^a)^b=b
+
+### 139.Word Break:
+f(n)=f(0,i) and f(i+1,n),典型的动态规划。 
 
 ### 141.Linked List Cycle:
 
