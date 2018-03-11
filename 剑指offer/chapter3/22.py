@@ -7,7 +7,7 @@
 class Solution:
     def FindKthToTail(self, head, k):
         # write code here
-        if not head:
+        if not head or k==0:
             return 
         i=0
         start=head

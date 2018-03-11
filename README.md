@@ -155,6 +155,12 @@ f(n)=f(0,i) and f(i+1,n),典型的动态规划。
 
 时间复杂度:O(N),空间复杂度:O(1)
 
+### 206.Reverse Linked List:
+
+非递归版本很简单，3个指针分别记录当前节点，前一个节点和下一个节点。然后变换即可。
+
+提交的答案是递归版本,看了[答案](https://leetcode.com/problems/reverse-linked-list/solution/)才懂，我就不班门弄斧了。
+
 ### 283. Move Zeroes:
 初看这题，容易难度，但是根据要求限制多，如果没有这些限制，就很简单。
 
