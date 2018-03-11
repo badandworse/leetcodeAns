@@ -1,6 +1,10 @@
 ## 记录我在用python刷leetcode中各个题的解题思路
 ## the answers for leetcode problem by python
 
+### 10.Regular Expression Matching:
+
+递归的方法:当前正则第二个字符不为'*'，很简单，比较当前，两个指针都往右移动即可，继续这样比较。如果为空，则有两种方式，第一种是正则的指针往后移动，字符串的保持不变，另一种是字符串的往后移动一位，而正则保持不变。后一种要求字符串前一位的匹配是正确的。这样递归的思想就出来了。
+
 ### 17.Letter Combinations of a Phone Number:
 这题是要找到号码对应字符串的所有组合。用字典来表示数字到字符串的组合。然后遍历数字串。使其对应的字母list与前面已有的组合进行
 连接即可。
