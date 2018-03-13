@@ -165,6 +165,10 @@ f(n)=f(0,i) and f(i+1,n),典型的动态规划。
 
 提交的答案是递归版本,看了[答案](https://leetcode.com/problems/reverse-linked-list/solution/)才懂，我就不班门弄斧了。
 
+### 236.Lowest Common Ancestor of a Binary Tree:
+
+找到根节点到两个节点的路径，然后找两个路径的公共节点即可。这类似dfs,效率有点低，看了效率高的答案，用的是从root往下逐层，销量更搞。
+
 ### 283. Move Zeroes:
 初看这题，容易难度，但是根据要求限制多，如果没有这些限制，就很简单。
 
