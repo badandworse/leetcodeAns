@@ -175,3 +175,30 @@ aList
 quikS=QuickSort()
 quikS.QuickS(aList)
 aList
+
+'''
+冒泡排序
+'''
+#%%
+class BubbleSort:
+    def Sort(self,a):
+        length=len(a)
+        for i in reversed(range(length)):
+            for j in range(i):
+                if a[j]>a[j+1]:
+                    a[j],a[j+1]=a[j+1],a[j]
+
+#%%
+def insert_sort(lst):
+    '''
+    插入排序
+    '''
+    n=len(lst)
+    if n==1: return lst
+    for i in range(1,n):
+        for j in range(i,0,-1):
+            if lst[j]<lst[j-1]: 
+                lst[j],lst[j-1]=lst[j-1],lst[j]
+            else:break
+    return lst
+

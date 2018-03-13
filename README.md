@@ -148,6 +148,10 @@ f(n)=f(0,i) and f(i+1,n),典型的动态规划。
 这题我只相当了递归版本，看了[discuss](https://leetcode.com/problems/binary-tree-postorder-traversal/discuss/45853/Accepted-Just-a-reversal-of-a-modified-Pre-order-traversal)才发现，如果我做出了
 144的Preorder 即mid-left-right,那我应该可以做出mid-right-left,只要再一反转不就是left-right-mid了。突然觉得自己缺乏想象力。
 
+### 160. Intersection of Two Linked Lists:
+
+这题如果用hashtable来做很简单，但是这会需要O(m)或者O(n)的空间,如果想要变为O(1)的空间，需要使用两指针A和B，分别指向一个链表,然后开始像前移动，如果A移动到链表尾，立马换到另一个的链表开始，同理B也是这样。如果两个链表有交集，则一次更换后应该会同时到达第一个交点。如果存在第二次交换，则证明没有交集，应该返回空。
+
 ### 198.House Robber
 最大抢劫金额，当进行到当前房子，有两种选择，抢劫当前房子，与不抢劫当前房子。因此需要有两个变量，存抢劫当前房子的最大金额，和不抢劫当前房子的最大金额，前者等于不抢劫上一个房子的最大金额加上当前房子的金额，而后者等于不抢劫上一个房子和抢劫上一个房子中两者的较大者。
 
