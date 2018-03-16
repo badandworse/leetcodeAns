@@ -202,6 +202,10 @@ f(n)=f(0,i) and f(i+1,n),典型的动态规划。
 ### 516. Longest Palindromic Subsequence:
 动态规划问题，把字符串反转以后，这就是一个典型的[LCS问题](http://blog.csdn.net/v_JULY_v/article/details/6110269)。
 
+### 628. Maximum Product of Three Numbers:
+
+最大的一定是在以下两种情况中产生：最大的3个数相乘，或者两个最小的数乘以最大的数，因为负数的情况下，也有且只能有2个负数的情况下才有可能成为最大值的一部分。
+
 ### 647.Palindromic Substrings:
 找出给定字符串的回文子串数
 

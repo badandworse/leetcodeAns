@@ -35,9 +35,14 @@ class Solution1:
         for i in range(length):
             mList=results[i]
             for j in range(len(mList)+1):
-                results.append(mList[:j]+[num]+mList[j+1:])
+                results.append(mList[:j]+[num]+mList[j:])
         del results[:length]
 
 
 mm=Solution1()
 mm.permute([1,2,3])
+
+#%%
+from itertools import permutations
+
+[list(x) for x  in permutations([1,2,3])]
