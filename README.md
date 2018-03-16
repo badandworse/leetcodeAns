@@ -211,6 +211,10 @@ f(n)=f(0,i) and f(i+1,n),典型的动态规划。
 
 首先单个字母肯定是，然后分别按1个字母或两个字母为中心往两边扩散，满足字符串就+1并继续，不满足直接跳出，检测下一个中心扩散情况。
 
+### 673. Number of Longest Increasing Subsequence:
+
+这题是[Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence)小升级版，需要知道lis的数量，那就用一个n*2的数组来完成，一个用来记录当前节点lis的长度，一个用来记录当前节点lis的数量，同时记录最长的lis长度，最后遍历得到有多少个最长的lis，双循环时，如果外循环的节点值大于内循环节点值，要判断此时记录的lis与内循环的节点的lis长度比较，相等，外层的lis数要加上当前这个节点的lis数，小于，这将外层的lis长度等于当前内循环节点的lis长度，数量等于内层节点的lis数。
+
 ### 746.Min Cost Climbing Stairs：
 典型的动态规划问题。
 遍历cost,当前节点有两个状态，经过该阶梯的成本，与不经过该阶梯的成本。遍历完，返回两者中的最小值即可。经过的成本f(n)=min(f(n-1),f(n-2))+cost[n],不经过的成本一定是f(n-1)。
