@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+#%%
 class Solution:
     def GetLeastNumbers_Solution(self, tinput, k):
         # write code here
@@ -26,9 +27,9 @@ class Solution:
         right=end
         mm=nums[start]
         while True:
-            while nums[lo]<mm and lo<end:
+            while nums[lo]<=mm and lo<end:
                 lo+=1
-            while nums[right]>=mm and right>start :
+            while nums[right]>mm and right>start :
                 right-=1
             if lo>=right:
                 break
@@ -37,4 +38,4 @@ class Solution:
 
 
 mm=Solution()
-mm.GetLeastNumbers_Solution([4,5,1,6,2,7,3,8],4)
+mm.GetLeastNumbers_Solution([1,2,3,4,5,6,7,8],4)
