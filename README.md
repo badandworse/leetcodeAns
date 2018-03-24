@@ -182,6 +182,10 @@ f(n)=f(0,i) and f(i+1,n),典型的动态规划。
 
 提交的答案是递归版本,看了[答案](https://leetcode.com/problems/reverse-linked-list/solution/)才懂，我就不班门弄斧了。
 
+### 221. Maximal Square:
+
+这题其实也可以用[84](https://leetcode.com/problems/maximal-rectangle/description/)题的方法，分行来求最大squre的面积，不过计算的时候要排定长宽哪个小，小的那个才是正方形的边长，然后再平方即面积。这个答案的时间复杂度为O(mn) 空间复杂度为O(n)
+
 ### 236.Lowest Common Ancestor of a Binary Tree:
 
 找到根节点到两个节点的路径，然后找两个路径的公共节点即可。这类似dfs,效率有点低，看了效率高的答案，用的是从root往下逐层，销量更搞。
