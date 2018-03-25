@@ -25,13 +25,12 @@ class Solution:
                         n+=1
             if n==0:
                 break
-            temp=[node for node in reversed(a)]
-            for i in range(len(stack)):
-                node=stack[i]
+            temp=[mm for mm in a]
+            for node in reversed(stack):
                 if node:
                     node.left=temp.pop()
                     node.right=temp.pop()
-            stack=[l for l in reversed(a)]
+            stack=a
         return root
 
 #%%
