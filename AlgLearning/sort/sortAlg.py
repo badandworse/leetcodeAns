@@ -115,7 +115,7 @@ class QuickSort(object):
         if begin>=end:
             return
         j=self.partions(a,begin,end)
-        self.sortL(a,begin,j)
+        self.sortL(a,begin,j-1)
         self.sortL(a,j+1,end)
     
     def partions(self,a,begin,end):
@@ -131,7 +131,7 @@ class QuickSort(object):
                 j-=1
             #跳出循环不仅是因为出现需要交换的i,j
             #也有可能是需要跳出循环，因此先检查是否需要跳出循环
-            #然后再交换
+            #然后再交换   446688
 
             if i>=j:
                 break
