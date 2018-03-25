@@ -1,4 +1,3 @@
-import math
 class Solution(object):
     def maximalSquare(self, matrix):
         """
@@ -19,7 +18,7 @@ class Solution(object):
                     heights[j]=0
             maxA=max(self.findMaxA(heights,cols),maxA)
             
-        return int(math.sqrt(maxA))*int(math.sqrt(maxA))
+        return maxA
     
     def findMaxA(self,heights,cols):
         stack=[]
@@ -31,7 +30,7 @@ class Solution(object):
                     break
                 else:
                     index=stack.pop()
-                    curA=math.pow(min(heights[index],i),2) if not stack else math.pow(min(i-stack[-1]-1,heights[index]),2)
+                    curA=min(heights[index],i)**2 if not stack else min(i-stack[-1]-1,heights[index])**2
                     maxA=max(curA,maxA)
             stack.append(i)
         while stack:
@@ -39,7 +38,7 @@ class Solution(object):
                 return maxA
             else:
                 index=stack.pop()
-                curA=curA=math.pow(min(heights[index],cols),2) if not stack else math.pow(min(cols-stack[-1]-1,heights[index]),2)
+                curA=min(heights[index],cols)**2 if not stack else min(cols-stack[-1]-1,heights[index])**2
                 maxA=max(curA,maxA)
         return maxA
         
