@@ -75,5 +75,3 @@ class Solution(object):
             if shash == phash:
                 res.append(i - m + 1)
         return res
-
-        
