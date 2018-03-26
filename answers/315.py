@@ -24,7 +24,7 @@ class Solution:
     def insertNode(self,root,node):
         
         if node.val>root.val:
-            node.count+=node.leftsize+1
+            node.count+=root.leftsize+1
             if not root.right:
                 root.right=node
             else:
@@ -44,6 +44,3 @@ class Solution:
         self.addRightCount(node.left)
         self.addRightCount(node.right)
         
-
-mm=Solution()
-mm.countSmaller([2,0,1])
