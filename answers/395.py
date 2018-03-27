@@ -34,7 +34,7 @@ class Solution:
                     string1=''
             else:
                 string1+=s[i]
-        if string1 not in m and not string1:
+        if string1 not in m and string1:
             m.append(string1)
         if not m:
             return 0
@@ -44,10 +44,4 @@ class Solution:
                 sum1+=self.longestSubstring(ss,k)
         return sum1
 
-        
 
-
-mm=Solution()
-mm.longestSubstring("bbaaacbd",3)
-        
-        
