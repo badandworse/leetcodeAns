@@ -13,7 +13,8 @@ class Solution:
             self.addEdge(edge[0],edge[1],edgeDict)
         
         for i in edgeDict.keys():
-            if self.checkisExit(i,i,edgeDict):
+            isVisited=[False]*numCourses
+            if self.checkisExit(i,i,edgeDict,isVisited):
                 return False
         return True
         
@@ -24,15 +25,16 @@ class Solution:
             edgeDict[a]=[b]
     
     
-    def checkisExit(self,a,b,edgeDict):
+    def checkisExit(self,a,b,edgeDict,isVisited):
+        if isVisited[a]==True:
+            return False
+        isVisited[a]=True
         if a not in edgeDict:
             return False
         if b in edgeDict[a]:
             return True
         for m in edgeDict[a]:
-            if self.checkisExit(m,b,edgeDict)==True:
+            if self.checkisExit(m,b,edgeDict,isVisited)==True:
                 return True
-        return False
-
-mm=Solution()
-mm.canFinish(4,[[0,1],[3,1],[1,3],[3,2]])
+        return False         
+        
