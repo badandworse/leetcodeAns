@@ -273,6 +273,10 @@ f(n)=f(0,i) and f(i+1,n),典型的动态规划。
 ### 516. Longest Palindromic Subsequence:
 动态规划问题，把字符串反转以后，这就是一个典型的[LCS问题](http://blog.csdn.net/v_JULY_v/article/details/6110269)。
 
+### 538. Convert BST to Greater Tree:
+
+将bst上大于此节点值的数加到该值上，我用了一个栈：采取右-中-左的顺序来放入栈中，然后从栈顶出栈将前面点的值加入到当前节点值上即可。
+
 ### 628. Maximum Product of Three Numbers:
 
 最大的一定是在以下两种情况中产生：最大的3个数相乘，或者两个最小的数乘以最大的数，因为负数的情况下，也有且只能有2个负数的情况下才有可能成为最大值的一部分。
