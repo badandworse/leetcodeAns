@@ -168,6 +168,10 @@ f(n)=f(0,i) and f(i+1,n),典型的动态规划。
 这题我只相当了递归版本，看了[discuss](https://leetcode.com/problems/binary-tree-postorder-traversal/discuss/45853/Accepted-Just-a-reversal-of-a-modified-Pre-order-traversal)才发现，如果我做出了
 144的Preorder 即mid-left-right,那我应该可以做出mid-right-left,只要再一反转不就是left-right-mid了。突然觉得自己缺乏想象力。
 
+### 146.LRU Cache:
+
+这题的难点在于如何在O(1)时间复杂度内完成操作，我想到的是用OrderDict,并始终让活跃的排在最后，这样在替换的时候只要去除第一对即可。使用dict.popitem(last=False)即可是FIFO
+
 ### 160. Intersection of Two Linked Lists:
 
 这题如果用hashtable来做很简单，但是这会需要O(m)或者O(n)的空间,如果想要变为O(1)的空间，需要使用两指针A和B，分别指向一个链表,然后开始像前移动，如果A移动到链表尾，立马换到另一个的链表开始，同理B也是这样。如果两个链表有交集，则一次更换后应该会同时到达第一个交点。如果存在第二次交换，则证明没有交集，应该返回空。
@@ -215,6 +219,11 @@ f(n)=f(0,i) and f(i+1,n),典型的动态规划。
 ### 309. Best Time to Buy and Sell Stock with Cooldown:
 
 这是一个动态规划的问题，每一个时间节点有3个状态：要么买，要么卖或者休息。如果买，那上一个时间段就是休息。buy[i]=max(sell[i-2]-price,buy[i-1]),sell[i]=max(buy[i-1]+price,sell[i-1])。如果当前节点买：则需要在i-2时完成卖的操作，因此buy[i]=max(sell[i-2]-price,buy[i-1]),而卖则是要么i-1的时候卖，要么这个时候卖。去焦大值,因为只用到i-1和i-2，可以用O(1)的空间完成。
+
+### 312.Burst Balloons:
+
+动态规划的题，想了半天没想出来状态转移的方程，看了大神的分析后，用dp[i][j]表示第i个气球到第j个气球爆炸以后能得到的最多硬币，则dp[i][j]=max(dp[i][j],nums[i-1]*nums[k]*nums[j+1]+dp[i-1][k]+dp[k+1][j])，因为最后可能爆的是i到j中的任意一个，假设最后爆的是k则此时得分为nums[i-1]*nums[k]*nums[j+1]+dp[i-1][k]+dp[k+1][j]。在开始之前数组首尾加上1。
+
 ### 315. Count of Smaller Numbers After Self：
 
 这题暴力遍历的时间复杂度为O(N*N)，不多说。按这题的意思是可以用二叉搜索树，不过二叉搜索树要倒着遍历数组，即根节点要是最后一个节点，这样在插入时，每个元素的位置确定，立马就能知道这个元素有多少个比他小的元素，树节点要记录自己左子树的个数，比如插入的时候，与根节点比较，如果插入值大于根节点，这应进入右子树，次数要在计数值上加上根节点左子树的大小和1，然后尝试加入右子树，重复这个过程，直到找到合适的位置。
@@ -295,7 +304,7 @@ f(n)=f(0,i) and f(i+1,n),典型的动态规划。
 
 O(n*n)的解法很直解，就是双循环遍历求和看是否满足.
 
-O(N)的方法就很巧妙了，需要用到dict，遍历到当前数的和为sum,如果sum-k在字典中，有多少中方法，则代表有多少个连续子数组的和为k，因为mdict中key为和，而value则为有多少连续子数组的和为key。
+O(N)的方法就很巧妙了，需要用到dict，遍历到当前数的和为sum,如果sum-k在字典中，有多少中方法，则代表有多少个连续子数组的和为k，因为mdict中key为和，而value则为有多少连续子数组的和为key。思想就是sum[i]-sum[j]=k
 
 ### 621. Task Scheduler:
 
