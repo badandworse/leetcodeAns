@@ -49,9 +49,3 @@ def addLcs(bList,list1,m,list2,n,results,paths):
         pathsTwo=[i for i in paths]
         addLcs(bList,list1,m-1,list2,n,results,paths)
         addLcs(bList,list1,m,list2,n-1,results,pathsTwo)
-
-
-
-
-results=getLCS('BDCABA','ABCBDAB')
-print(results)
