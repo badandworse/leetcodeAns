@@ -108,7 +108,7 @@ class MergeSort(object):
 '''   
 class QuickSort(object):
     def QuickS(self,aList):
-        np.random.shuffle(aList)
+        #np.random.shuffle(aList)
         self.sortL(aList,0,len(aList)-1)
 
     def sortL(self,a,begin,end):
@@ -131,11 +131,13 @@ class QuickSort(object):
                 j-=1
             #跳出循环不仅是因为出现需要交换的i,j
             #也有可能是需要跳出循环，因此先检查是否需要跳出循环
-            #然后再交换   446688
+            #然后再交换  
 
             if i>=j:
                 break
             exchange(a,i,j)
+            i+=1
+            j-=1
         print(i,j)
         exchange(a,begin,j)            
         return j
@@ -172,10 +174,10 @@ aList
 # mergeS.MergeF(aList)
 
 #%%
+aList=[3,3,3,3,3]
 quikS=QuickSort()
 quikS.QuickS(aList)
 aList
-
 '''
 冒泡排序
 '''
